@@ -4,14 +4,22 @@ import './App.css';
 
 class MyClass extends React.Component{
   
+  constructor(){
+    super();
+    this.state = { 
+     string: 'GOPAL'
+    };
+  }
+   
+
   render(){
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-           Hello Gopal Here.
-           <h1>Learning react render()</h1>
+           {this.state.string}
+           <h1>Learning state use</h1>
           </p>
           <a
             className="App-link"
