@@ -39,7 +39,12 @@ class MyClass extends React.Component{
     }
   }
 
- 
+ componentDidMount(){
+   fetch('https://jsonplaceholder.typicode.com/users')
+   .then(Response=> Response.json())
+   .then(user=>console.log(user))
+   
+ }
    
  
   render(){
@@ -47,7 +52,7 @@ class MyClass extends React.Component{
       <div className="App">
        {
          this.state.action.map(act=>
-         <h1>{act.name}</h1>)
+         <h1 key={act.id}>{act.name}</h1>)
        }
       </div>
     );
