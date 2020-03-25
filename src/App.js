@@ -11,6 +11,10 @@ class MyClass extends React.Component{
     };
   }
    
+ 
+  shoot() {
+    alert("Great Shot!");
+  }
 
   render(){
     return (
@@ -21,7 +25,8 @@ class MyClass extends React.Component{
            {this.state.string}
            <h1>Learning state use</h1>
           </p>
-          <a
+          <button onClick={this.shoot} >click</button>
+         <a
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
@@ -57,3 +62,5 @@ class MyClass extends React.Component{
 }*/
 
 export default MyClass;
+
+
