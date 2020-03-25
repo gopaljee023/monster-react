@@ -21,6 +21,20 @@ class MyClass extends React.Component{
           name:"Akhilesh",
           id:'id3'
         }
+      ],
+      action:[
+        {
+          name:"start",
+          id:"act1"
+         },
+         {
+          name:"build",
+          id:"act2"
+         },
+         {
+          name:"eject",
+          id:"act3"
+         }
       ]
     }
   }
@@ -31,13 +45,10 @@ class MyClass extends React.Component{
   render(){
     return (
       <div className="App">
-        {
-            
-          this.state.monsters.map(
-              mon=><h1 key={mon.id}>{mon.name}</h1>
-                )
-            
-        }
+       {
+         this.state.action.map(act=>
+         <h1>{act.name}</h1>)
+       }
       </div>
     );
   }
