@@ -1,6 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+
+//import CardList: how to do that :Jee
+
+import {CardList} from './component/card-list/card-list.component'
 
 class MyClass extends React.Component{
   
@@ -23,10 +27,13 @@ class MyClass extends React.Component{
   render(){
     return (
       <div className="App">
-       {
+        <CardList name="jee">
+        {
          this.state.monsters.map(mon=>
          <h1 key={mon.id}>{mon.name}</h1>)
        }
+        </CardList>
+      
       </div>
     );
   }
