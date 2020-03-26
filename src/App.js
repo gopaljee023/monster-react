@@ -8,41 +8,14 @@ class MyClass extends React.Component{
     super();
     //Arrays
     this.state ={ 
-      monsters:[
-        { 
-          name: 'GOPAL',
-          id:'id1'
-        },
-        {
-          name:"Madhu",
-           id:'id2'
-        },
-        {
-          name:"Akhilesh",
-          id:'id3'
-        }
-      ],
-      action:[
-        {
-          name:"start",
-          id:"act1"
-         },
-         {
-          name:"build",
-          id:"act2"
-         },
-         {
-          name:"eject",
-          id:"act3"
-         }
-      ]
+      monsters:[]      
     }
   }
 
  componentDidMount(){
    fetch('https://jsonplaceholder.typicode.com/users')
    .then(Response=> Response.json())
-   .then(user=>console.log(user))
+   .then(users=> this.setState({monsters:users}))
    
  }
    
@@ -51,8 +24,8 @@ class MyClass extends React.Component{
     return (
       <div className="App">
        {
-         this.state.action.map(act=>
-         <h1 key={act.id}>{act.name}</h1>)
+         this.state.monsters.map(mon=>
+         <h1 key={mon.id}>{mon.name}</h1>)
        }
       </div>
     );
