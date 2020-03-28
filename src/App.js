@@ -16,9 +16,15 @@ class MyClass extends React.Component{
       monsters:[] ,
       searchField:"" ,
     }
-    this.updateText1 =  (text) => {this.setState({ searchField:text})}
+
     
   }
+
+  //arrow function... otherwise we need to write bind this in constructor
+  handleChange =(e)=>{
+      this.setState({searchField:e.target.value})
+  }
+
 
  componentDidMount(){
    fetch('https://jsonplaceholder.typicode.com/users')
@@ -36,7 +42,7 @@ class MyClass extends React.Component{
     return (
       <div className="App">
         
-        <SearchBox onHandleChange={e=>this.setState({searchField:e.target.value})} placeHolder={'search monster'}/>
+        <SearchBox onHandleChange={this.handleChange} placeHolder={'search monster'}/>
         <CardList monsters={filteredMonsters}/>
   
        </div>
